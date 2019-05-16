@@ -1,0 +1,42 @@
+{
+  "name": "tools-app",
+  "version": "1.0.0",
+  "description": "My awesome Nuxt.js project",
+  "author": "kuaile",
+  "private": true,
+  "config": {
+    "nuxt": {
+      "host": "192.168.0.174",
+      "port": "3967"
+    }
+  },
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.4.1",
+    "axios": "^0.18.0",
+    "clipboard": "^2.0.4",
+    "element-ui": "^2.8.2",
+    "koa": "^2.6.2",
+    "koa-router": "^7.4.0",
+    "nprogress": "^0.2.0",
+    "nuxt": "^2.4.0",
+    "pm2": "^3.5.0"
+
+  },
+  "devDependencies": {
+    "@gauseen/nuxt-proxy": "^1.0.1",
+    "@nuxtjs/axios": "^5.4.1",
+    "@nuxtjs/proxy": "^1.3.3",
+    "babel-preset-es2015": "^6.24.1",
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.1.1",
+    "esri-loader": "^2.9.2",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "nodemon": "^1.18.9"
+  }
+}
