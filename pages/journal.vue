@@ -35,7 +35,6 @@
 </style>
 
 <script>
-import { CodeLog } from "@/config/api";
 export default {
   // layout: 'blank',
   data() {

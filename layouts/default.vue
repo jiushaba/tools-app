@@ -39,8 +39,6 @@
 import headermenu from "~/components/head/headmenu.vue";
 import sidebarmenu from "~/components/sidebar/sidebarmenu.vue";
 import footerIndex from "~/components/footer/footerIndex.vue";
-import { error } from "util";
-import { Menu } from "@/config/api";
 export default {
   data() {
     return {};

@@ -36,7 +36,6 @@
 <script>
 import cry from "~/components/public/dynamiccircle.vue";
 import { clearInterval } from "timers";
-import { Menu } from "@/config/api";
 export default {
   components: {
     cry

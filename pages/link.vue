@@ -53,7 +53,6 @@
 </style>
 
 <script>
-import { Link } from "@/config/api";
 export default {
   data() {
     return {

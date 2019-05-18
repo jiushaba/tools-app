@@ -114,13 +114,23 @@
             </el-col>
           </el-row>
         </el-tab-pane>
-        <!-- <el-tab-pane label="在线MarkDown编辑器" name="markdown">在线MarkDown编辑器</el-tab-pane> -->
+        <el-tab-pane label="在线MarkDown编辑器" name="markdown">
+          <el-row class="codeing" style="height:500px; text-align: center">
+            <codeing/>
+          </el-row>
+        </el-tab-pane>
       </el-tabs>
     </el-col>
   </el-row>
 </template>
 
 <style scoped>
+.codeing{
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
 .tost {
   background-color: red;
 }
@@ -161,7 +171,12 @@
 
 <script>
 import Clipboard from "clipboard";
+import codeing from "~/components/public/codeing.vue";
+import { Frontend } from "@/assets/js/common";
 export default {
+  components: {
+    codeing
+  },
   data() {
     return {
       noBorderValue: false,
@@ -176,44 +191,7 @@ export default {
       color: "#F56C6C",
       hexColor: "",
       rgb: "",
-      commonColors: [
-        {
-          title: "#409EFF",
-          color: "#409EFF"
-        },
-        {
-          title: "#67C23A",
-          color: "#67C23A"
-        },
-        {
-          title: "#E6A23C",
-          color: "#E6A23C"
-        },
-        {
-          title: "#F56C6C",
-          color: "#F56C6C"
-        },
-        {
-          title: "#909399",
-          color: "#909399"
-        },
-        {
-          title: "#000000",
-          color: "#000000"
-        },
-        {
-          title: "#191970",
-          color: "#191970"
-        },
-        {
-          title: "#ED9121",
-          color: "#ED9121"
-        },
-        {
-          title: "#663366",
-          color: "#663366"
-        }
-      ]
+      commonColors: []
     };
   },
   watch: {
@@ -238,6 +216,7 @@ export default {
   },
   mounted() {
     this.activeName = this.$route.query.activeName || "color";
+    this.commonColors = Frontend.commonColors;
     this.changeRgbColorToHex();
     this.r = parseInt(255 * Math.random());
     this.g = parseInt(255 * Math.random());
@@ -267,43 +246,14 @@ export default {
       });
     },
     changeRgbColorToHex() {
-      var rgbColor = "rgb(" + this.r + "," + this.g + "," + this.b + ")";
-      var reg = /^rgb\((\s*[1-2]?[0-9]?[0-9]{1}\,)(\s*[1-2]?[0-9]?[0-9]{1}\,)(\s*[1-2]?[0-9]?[0-9]{1})\)$/;
-
-      if (reg.test(rgbColor)) {
-        var matches = reg.exec(rgbColor);
-        var hexColor = "#";
-        for (var i = 1; i <= 3; i++) {
-          if (parseInt(matches[i]) < 16) {
-            hexColor += "0" + parseInt(matches[i]).toString(16);
-          } else {
-            hexColor += parseInt(matches[i]).toString(16);
-          }
-        }
-      }
-
-      return (this.hexColor = hexColor);
+      this.hexColor = Frontend.rgbTo16Ascii(this.r, this.g, this.b);
     },
     pxToRemConvert() {
-      let sou = this.pxData;
-      var arr = sou.split("\n");
-      var sb = "";
-      for (var i = 0; i < arr.length; i++) {
-        var line = arr[i];
-        sb +=
-          line.replace(/\d+px/g, px => {
-            if (this.noBorderValue) {
-              if (!/border:/gi.test(line)) {
-                return parseInt(px) / parseInt(this.tem) + "rem";
-              } else {
-                return px;
-              }
-            } else {
-              return parseInt(px) / parseInt(this.tem) + "rem";
-            }
-          }) + "\n";
-      }
-      this.remData = sb;
+      this.remData = Frontend.pxToRem(
+        this.pxData,
+        this.noBorderValue,
+        this.tem
+      );
     }
   }
 };
