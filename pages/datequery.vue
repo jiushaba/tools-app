@@ -2,7 +2,7 @@
 <template>
   <el-row :gutter="20">
     <el-col :span="24">
-      <el-tabs v-model="activeName" type="border-card">
+      <el-tabs v-model="activeName" type="border-card" @tab-click="handleClick">
         <el-tab-pane label="本机IP" name="LocalIp">
           <el-table :data="LocalIpData" border style="width: 100%" :show-header="false">
             <el-table-column prop="name" align="left" width="100"></el-table-column>
@@ -146,8 +146,8 @@ export default {
   },
   methods: {
     async getHistoryToday() {
-       const {data} =await this.$axios.get('/dataQuery/today')
-       this.HistoryTodayData=data
+      const { data } = await this.$axios.get("/dataQuery/today");
+      this.HistoryTodayData = data;
     },
     async mobileSerach() {
       if (this.mobile === "") {
@@ -166,8 +166,10 @@ export default {
         });
         return;
       }
-      const {data}=await this.$axios.get('/dataQuery/mobile',{params:{mobile:this.mobile}})
-      this.PhoneBelongToData=[data]
+      const { data } = await this.$axios.get("/dataQuery/mobile", {
+        params: { mobile: this.mobile }
+      });
+      this.PhoneBelongToData = [data];
     },
     async wordSerach() {
       if (this.word === "") {
@@ -190,11 +192,12 @@ export default {
         });
         return;
       }
-      const {data}=await this.$axios.get('/dataQuery/word',{params:{word:this.word}})
-       this.WordBelongToData=[data]
+      const { data } = await this.$axios.get("/dataQuery/word", {
+        params: { word: this.word }
+      });
+      this.WordBelongToData = [data];
     },
     async ipSerach() {
-      
       if (this.ip === "") {
         this.$notify({
           title: "警告",
@@ -216,9 +219,11 @@ export default {
         });
         return;
       }
-      const {data}=await this.$axios.get('/dataQuery/ip',{params:{ip:this.ip}})
-      
-      this.IpBelongToData=[data]
+      const { data } = await this.$axios.get("/dataQuery/ip", {
+        params: { ip: this.ip }
+      });
+
+      this.IpBelongToData = [data];
     },
     getBrowerInfo() {
       let browserObject;
@@ -428,6 +433,9 @@ export default {
       } else {
         callback();
       }
+    },
+    handleClick(tab, event) {
+      this.$router.push("datequery?activeName=" + tab.name);
     }
   },
   head: {

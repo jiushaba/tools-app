@@ -114,7 +114,7 @@
             </el-col>
           </el-row>
         </el-tab-pane>
-        <el-tab-pane label="在线MarkDown编辑器" name="markdown">在线MarkDown编辑器</el-tab-pane>
+        <!-- <el-tab-pane label="在线MarkDown编辑器" name="markdown">在线MarkDown编辑器</el-tab-pane> -->
       </el-tabs>
     </el-col>
   </el-row>
