@@ -14,9 +14,13 @@ module.exports = {
         charset: 'utf-8'
       },
       {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1'
+        name: 'renderer',
+        content: 'webkit'
       },
+      // {
+      //   name: 'viewport',
+      //   content: 'width=device-width, initial-scale=1'
+      // },
       {
         hid: 'description',
         name: 'description',
@@ -58,12 +62,12 @@ module.exports = {
    */
   plugins: [
     '@/plugins/element-ui',
-   '~plugins/axios',
-   '~/plugins/route'
+    '~plugins/axios',
+    '~/plugins/route'
   ],
   router: {
     mode: 'history',
-    isAddDynamicMenuRoutes:false   //// 是否已经添加动态(菜单)路由
+    isAddDynamicMenuRoutes: false //// 是否已经添加动态(菜单)路由
   },
 
   modules: [
