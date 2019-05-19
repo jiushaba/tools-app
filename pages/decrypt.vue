@@ -244,9 +244,9 @@ export default {
       Decrypt.isNull();
       debugger;
       if (this.Base64DecryptData.indexOf("data:image/jpeg;base64,") >= 0) {
-        this.prView = this.Base64DecryptData.trim();
+        this.prView = this.Base64DecryptData;
       } else {
-        this.prView = "data:image/jpeg;base64," + this.Base64DecryptData.trim();
+        this.prView = "data:image/jpeg;base64," + this.Base64DecryptData;
       }
     },
     action() {
