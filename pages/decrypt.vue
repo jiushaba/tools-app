@@ -241,12 +241,12 @@ export default {
       this.fullscreenLoading = true;
     },
     imageBase64Decrypt() {
-      Decrypt.isNull();
+      Decrypt.isNull(this.Base64DecryptData);
       debugger;
       if (this.Base64DecryptData.indexOf("data:image/jpeg;base64,") >= 0) {
-        this.prView = this.Base64DecryptData;
+        this.prView = this.Base64DecryptData.trim();
       } else {
-        this.prView = "data:image/jpeg;base64," + this.Base64DecryptData;
+        this.prView = "data:image/jpeg;base64," + this.Base64DecryptData.trim();
       }
     },
     action() {
