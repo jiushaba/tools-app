@@ -27,3 +27,13 @@ aside {
 h2 {
   margin: 0 0;
 }
+.just-content{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+.text-center{
+  text-align: center;
+
+}
+

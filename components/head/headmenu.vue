@@ -59,7 +59,7 @@ export default {
   },
   watch: {
     $route(to, from) {
-     this.$store.commit("setMenuHeadActiveName", to.path);
+      this.$store.commit("setMenuHeadActiveName", to.path);
       console.log(to.path);
     }
   },
