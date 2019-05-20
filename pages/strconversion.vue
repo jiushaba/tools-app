@@ -149,7 +149,7 @@
             >
               <el-row>
                 <el-button type="primkey" @click="doFormat">
-                  <span>加密</span>
+                  <span>格式化</span>
                   <i class="el-icon-arrow-right"></i>
                 </el-button>
               </el-row>
