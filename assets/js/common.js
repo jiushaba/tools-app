@@ -7,6 +7,9 @@ import * as StrConversion from './strconversion/index.js'
 import * as UnitConversion from './unitconversion/index.js'
 import * as CodeFormat from './codeformat/index.js'
 import * as Regular from './regular/index.js'
+import * as QrGenerate from './qrgenerate/index.js'
+import * as BarGenerate from './bargenerate/index.js'
+
 export {
   DateQuery,
   EntityGenerate,
@@ -16,5 +19,7 @@ export {
   StrConversion,
   UnitConversion,
   CodeFormat,
-  Regular
+  Regular,
+  QrGenerate,
+  BarGenerate
 }
