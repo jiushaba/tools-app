@@ -26,18 +26,21 @@ module.exports = {
         name: 'description',
         content: pkg.description
       }
-      // ,{
-      //   "http-equiv":"Content-Security-Policy",
-      //   content:"upgrade-insecure-requests"
-      // }
+       ,{
+         "http-equiv":"Content-Security-Policy",
+         content:"upgrade-insecure-requests"
+       }
     ],
     link: [{
       rel: 'icon',
       type: 'image/x-icon',
       href: '/favicon.ico'
     }],
+
     script: [{
       src: "http://pv.sohu.com/cityjson?ie=utf-8"
+    }, {
+      src: "http://tajs.qq.com/stats?sId=63576616"
     }]
   },
 
