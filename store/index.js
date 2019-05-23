@@ -2,9 +2,9 @@ export const actions = {
   async nuxtServerInit({
     commit
   }, {
-    req,app
+    req,
+    app
   }) {
-   
     debugger
     const {
       data
@@ -23,7 +23,7 @@ export const actions = {
       data.leftMenu.forEach(item => {
         tem.push(item.url);
       });
-      commit('setSideMenuUrlList',tem);
+      commit('setSideMenuUrlList', tem);
     }
   }
 }

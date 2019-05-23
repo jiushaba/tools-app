@@ -9,7 +9,7 @@ import * as CodeFormat from './codeformat/index.js'
 import * as Regular from './regular/index.js'
 import * as QrGenerate from './qrgenerate/index.js'
 import * as BarGenerate from './bargenerate/index.js'
-
+import * as ParameterTable from './parametertable/index.js'
 export {
   DateQuery,
   EntityGenerate,
@@ -21,5 +21,6 @@ export {
   CodeFormat,
   Regular,
   QrGenerate,
-  BarGenerate
+  BarGenerate,
+  ParameterTable
 }

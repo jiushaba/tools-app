@@ -10,8 +10,5 @@ export default {
   },
   setSideMenuUrlList(state, val) {
     state.sideMenuUrlList = val;
-  },
-  setMenuHeadActiveName(state,val){
-    state.menuHeadActiveName=val
   }
 }
